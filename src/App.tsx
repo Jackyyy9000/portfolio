@@ -32,6 +32,7 @@ export const App: React.FC = () => {
     width: '100%',
     height: '100%',
     backgroundImage: `radial-gradient(800px circle at ${mousePosition.x }px ${mousePosition.y }px, rgba(255, 255, 255, 0.05), transparent 50%)`,
+    zIndex: "-1",
   };
 
   return (
