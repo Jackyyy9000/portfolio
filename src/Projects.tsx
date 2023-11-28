@@ -16,7 +16,7 @@ export const Projects: React.FC = () => {
                     <div className="flex flex-col justify-between pt-4 md:pt-0 md:pl-4">
                         <div className="flex flex-row flex-nowrap justify-between items-center py-2 text-2xl font-semibold">
                             Portfolio website
-                            <a className="https://github.com/">
+                            <a href="https://github.com/Jackyyy9000/portfolio" target={"_blank"}>
                                 <img src="./images/github-mark.png" className="w-[36px] h-[36px] rounded-md"/> 
                             </a>
                         </div>
