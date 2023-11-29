@@ -6,6 +6,8 @@ export const MyForm: React.FC = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
+    const [isFormSent, setFormSent] = useState(true);
+    const [FormFeedbackMessage, setFormFeedbackMessage] = useState("")
 
     const form = useRef<HTMLFormElement>(null);
 
@@ -32,10 +34,12 @@ export const MyForm: React.FC = () => {
             emailjs.sendForm("service_al50a38", "template_c919tds", form.current, "nEcvmVNxFuq6jsYMw")
                 .then((result) => {
                     console.log(result.text);
-                    alert("Message sent successfully.");
+                    setFormFeedbackMessage("Thank you for your message, I will get back to you as soon as possible!")
+                    setFormSent(true);
                 }, (error) => {
                     console.log(error.text);
-                    alert("Something went wrong, please try again later.");
+                    setFormFeedbackMessage("Whoops, something went wrong. Please try again later!")
+                    setFormSent(true);
                 });
         }
 
@@ -46,6 +50,7 @@ export const MyForm: React.FC = () => {
 
     return (
         <>
+            {isFormSent ? <div className='p-2 font-normal'>{FormFeedbackMessage}</div> : null}
             <form ref={form} action="" onSubmit={handleSubmit} className="flex flex-col items-center w-[100%]">
                 <input 
                     className="w-[100%] block my-2 p-2 bg-slate-900 border border-gray-700 rounded-md" 

@@ -13,6 +13,9 @@ interface MousePosition {
 }
 
 export const App: React.FC = () => {
+  {/* HANDLE CUSTOM ALERT */}
+
+  {/* HANDLE GLOWING CIRCLE FOLLOWING THE CURSOR */}
   const [mousePosition, setMousePosition] = useState<MousePosition>({ x: 0, y: 0 });
 
   useEffect(() => {
